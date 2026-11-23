@@ -148,6 +148,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   tag contained.
 - `AGENTS.md`, `CLAUDE.md`, and `.github` from the sdist.
 
+### Fixed
+
+- `get_jurisdiction_by_alpha2`, `get_jurisdiction_by_alpha3`,
+  `get_country_by_iso` and `get_currency_by_code` return `None` for input that
+  is not a string, as they do for unknown codes. They raised `AttributeError`,
+  so a missing request value (`None`) or a JSON number became a server error.
+
 ## [1.0.0] - 2026-11-05 (tagged; not published to PyPI)
 
 ### Changed

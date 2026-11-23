@@ -334,6 +334,8 @@ def get_jurisdiction_by_alpha2(code: str) -> str | None:
     >>> get_jurisdiction_by_alpha2("ro")
     'Romania'
     """
+    if not isinstance(code, str):
+        return None
     return ISO_ALPHA2_TO_JURISDICTION.get(code.upper())
 
 
@@ -347,4 +349,6 @@ def get_jurisdiction_by_alpha3(code: str) -> str | None:
     >>> get_jurisdiction_by_alpha3("ROU")
     'Romania'
     """
+    if not isinstance(code, str):
+        return None
     return ISO_ALPHA3_TO_JURISDICTION.get(code.upper())

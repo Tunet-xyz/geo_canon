@@ -52,6 +52,8 @@ def get_country_by_iso(iso_code: str) -> str | None:
     >>> get_country_by_iso("ro")
     'Romania'
     """
+    if not isinstance(iso_code, str):
+        return None
     return _ISO_TO_COUNTRY.get(iso_code.lower())
 
 

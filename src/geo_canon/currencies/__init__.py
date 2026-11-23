@@ -346,6 +346,8 @@ def get_currency_by_code(code: str) -> CurrencyInfo | None:
     >>> get_currency_by_code("EUR").symbol
     '€'
     """
+    if not isinstance(code, str):
+        return None
     return CURRENCY_BY_CODE.get(code.upper())
 
 
